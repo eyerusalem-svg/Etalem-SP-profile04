@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Service Provider Profile | Verified by GoodayOn</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,sans-serif;background:#f3f3f6;color:#1a1e2b;line-height:1.45}
+.hidden{display:none!important}
+.page{position:relative;max-width:1120px;margin:0 auto;padding:2rem 1.5rem 3rem;isolation:isolate}
+.layout{display:grid;grid-template-columns:340px minmax(0,1fr);gap:1.5rem;align-items:start}
+.side{position:sticky;top:1.5rem}
+.main{min-width:0}
+.profile-card{background:#fff;border:1px solid #eeeef2;border-radius:24px;box-shadow:0 8px 28px rgba(20,20,40,.05);padding:2rem 1.4rem 1.5rem}
+@media(max-width:900px){.layout{grid-template-columns:1fr}.side{position:static}}
+@media(max-width:640px){.page{padding:1rem .9rem 2rem}}
+.watermark-stamp-centered{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-12deg);width:320px;z-index:10;pointer-events:none;opacity:.3}
+@media(max-width:640px){.watermark-stamp-centered{width:200px;opacity:.26}}
+
+/* header */
+.top{text-align:center}
+.avatar-wrap{position:relative;width:116px;height:116px;margin:0 auto 1rem}
+.photo{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:top;background:#e9e6df;border:3px solid #fff;box-shadow:0 0 0 2px #E21E81}
+.verified{position:absolute;right:2px;bottom:6px;width:26px;height:26px;border-radius:50%;background:#E21E81;color:#fff;border:2px solid #fff;display:flex;align-items:center;justify-content:center;font-size:.7rem}
+.sp-name{font-size:1.4rem;font-weight:800;letter-spacing:-.02em;color:#111;line-height:1.2}
+.sp-title{display:inline-block;margin-top:.4rem;font-size:.82rem;font-weight:500;color:#6b6f7c;background:#f3f3f6;padding:.2rem .85rem;border-radius:40px}
+.meta-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;margin-top:1rem}
+.pill{display:inline-flex;align-items:center;gap:.5rem;background:#fff;border:1px solid #f0f0f3;box-shadow:0 3px 12px rgba(20,20,40,.07);border-radius:40px;padding:.4rem .9rem .4rem .45rem;font-size:.82rem;font-weight:600;color:#2a2f3d}
+.pill-ic{width:26px;height:26px;border-radius:50%;background:rgba(226,30,129,.1);color:#E21E81;display:flex;align-items:center;justify-content:center;font-size:.7rem;flex-shrink:0}
+.generated-badge{display:inline-flex;align-items:center;gap:.4rem;margin-top:.9rem;font-size:.72rem;color:#9a9eac;font-weight:500}
+.generated-badge i{color:#E21E81}
+.brand-word{color:#E21E81}
+
+/* stats */
+.stats{display:flex;justify-content:center;margin:1.4rem 0 .9rem;padding-top:1.2rem;border-top:1px solid #f0f0f3}
+.stat{flex:1;display:flex;flex-direction:column;align-items:center;gap:.15rem;padding:.2rem .4rem;min-width:0}
+.stat:not(.hidden)+.stat:not(.hidden){border-left:1px solid #ececf0}
+.stat-val{font-size:1.3rem;font-weight:800;color:#111;line-height:1.2}
+.stat-val small{font-size:.75rem;font-weight:600;color:#9a9eac}
+.stat-lbl{font-size:.72rem;color:#8b8f9c;font-weight:500;text-align:center}
+.exp-strip{display:flex;align-items:center;justify-content:center;gap:.5rem;flex-wrap:wrap;background:rgba(226,30,129,.06);border-radius:1rem;padding:.55rem .9rem;font-size:.85rem;color:#5a1740;margin-bottom:.4rem}
+.exp-strip i{color:#E21E81}
+.exp-strip b{font-weight:700}
+
+/* stars (golden) */
+.stars{position:relative;display:inline-block;line-height:0;white-space:nowrap;vertical-align:middle}
+.stars-layer{display:inline-flex}
+.stars-layer svg{width:var(--star-size,16px);height:var(--star-size,16px);flex-shrink:0;display:block}
+.stars-bg svg{fill:#e8e4da}
+.stars-fill{position:absolute;top:0;left:0;height:100%;overflow:hidden}
+.stars-fill svg{fill:#F5B301}
+
+/* sections */
+.sec{background:#fff;border:1px solid #eeeef2;border-radius:24px;box-shadow:0 8px 28px rgba(20,20,40,.05);padding:1.5rem 1.7rem 1.7rem;margin-bottom:1.25rem;scroll-margin-top:1rem}
+@media(max-width:640px){.sec{padding:1.2rem 1.1rem 1.4rem;border-radius:20px}}
+.sec-head{display:flex;align-items:center;justify-content:space-between;gap:.6rem;padding-bottom:.9rem;margin-bottom:1.1rem;border-bottom:1px solid #f0f0f3}
+.sec-title{display:flex;align-items:center;gap:.7rem}
+.sec-ic{width:38px;height:38px;border-radius:12px;background:rgba(226,30,129,.1);color:#E21E81;display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0}
+.sec-h{font-size:1.1rem;font-weight:800;color:#111;letter-spacing:-.01em}
+.section-count{background:rgba(226,30,129,.08);color:#E21E81;font-size:.7rem;font-weight:700;padding:.2rem .7rem;border-radius:40px}
+.section-count:empty{display:none}
+.bio-text{font-size:.93rem;line-height:1.7;color:#6b6f7c;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.bio-text.open{display:block;-webkit-line-clamp:unset}
+.read-more{background:none;border:0;color:#E21E81;font:inherit;font-size:.9rem;font-weight:700;cursor:pointer;margin-top:.35rem}
+
+/* experience */
+.exp-glance{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:.6rem;margin-bottom:1.2rem}
+.exp-glance:empty{display:none}
+.glance-item{display:flex;flex-direction:column;align-items:center;text-align:center;gap:.4rem;background:#fff;border:1px solid #f0f0f3;box-shadow:0 3px 12px rgba(20,20,40,.06);border-radius:1.1rem;padding:.8rem .4rem}
+.glance-icon{width:38px;height:38px;border-radius:50%;background:rgba(226,30,129,.1);display:flex;align-items:center;justify-content:center;font-size:1.15rem;line-height:1}
+.glance-label{font-size:.62rem;text-transform:uppercase;letter-spacing:.4px;font-weight:600;color:#9a9eac}
+.glance-value{font-size:.95rem;font-weight:800;color:#111}
+.sub-title{font-size:.72rem;text-transform:uppercase;letter-spacing:.8px;font-weight:700;color:#8b8f9c;margin-bottom:.9rem}
+.timeline{position:relative;padding-left:1.5rem}
+.timeline:empty{display:none}
+.timeline::before{content:'';position:absolute;left:5px;top:6px;bottom:6px;width:2px;border-radius:2px;background:linear-gradient(#E21E81,rgba(226,30,129,.15))}
+.tl-item{position:relative;padding-bottom:1.2rem}
+.tl-item:last-child{padding-bottom:0}
+.tl-item::before{content:'';position:absolute;left:-1.5rem;top:4px;width:12px;height:12px;border-radius:50%;background:#fff;border:3px solid #E21E81}
+.tl-role{font-size:.97rem;font-weight:700;color:#111}
+.tl-meta{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.35rem}
+.tl-chip{display:inline-flex;align-items:center;gap:.35rem;font-size:.75rem;font-weight:600;padding:.2rem .7rem;border-radius:40px}
+.tl-chip i{font-size:.68rem;color:#E21E81}
+.tl-inst{background:rgba(226,30,129,.08);color:#b9156b}
+.tl-period{background:#f3f3f6;color:#6b6f7c}
+.tl-details{margin-top:.45rem;font-size:.88rem;line-height:1.55;color:#6b6f7c}
+
+/* skills (now includes the cooking menu) */
+.skill-group{margin-bottom:1.3rem}
+.skill-group:last-child{margin-bottom:0}
+.skill-group-title{display:flex;align-items:center;gap:.55rem;font-size:.8rem;font-weight:700;color:#2a2f3d;margin-bottom:.6rem}
+.skill-group-svg{width:30px;height:30px;border-radius:10px;flex-shrink:0;background:rgba(226,30,129,.1);color:#E21E81;display:inline-flex;align-items:center;justify-content:center}
+.skill-group-svg svg{width:17px;height:17px;display:block}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.skill-chip{display:inline-flex;align-items:center;gap:.45rem;background:#fff;border:1px solid #f0f0f3;box-shadow:0 3px 12px rgba(20,20,40,.07);border-radius:40px;padding:.45rem .95rem;font-size:.83rem;font-weight:600;color:#2a2f3d}
+.skill-chip i{font-size:.65rem;color:#E21E81}
+.skill-text{font-size:.9rem;line-height:1.6;color:#6b6f7c}
+.cooking-menu{margin-top:.9rem;background:#faf9fb;border:1px solid #f0f0f3;border-radius:1rem;padding:.9rem 1rem}
+.cooking-item{margin-bottom:.9rem}
+.cooking-item:last-child{margin-bottom:0}
+.cooking-label{display:flex;align-items:center;gap:.45rem;font-size:.8rem;font-weight:700;color:#2a2f3d;margin-bottom:.25rem}
+.cooking-label i{color:#E21E81;font-size:.8rem}
+.cooking-value{font-size:.9rem;line-height:1.6;color:#6b6f7c;padding-left:1.35rem}
+
+/* rating */
+.rating-simple-list{display:flex;flex-direction:column}
+.rating-row{display:none;grid-template-columns:minmax(0,1fr) 115px;align-items:center;padding:.7rem 0;border-bottom:1px solid #f0f0f3;column-gap:.8rem}
+.rating-row:last-child{border-bottom:0}
+.rating-row.show{display:grid}
+.rating-info{display:flex;align-items:center;gap:.55rem;min-width:0}
+.rating-bullet{color:#E21E81;font-weight:700;flex-shrink:0}
+.rating-label-simple{font-weight:500;font-size:.88rem;color:#2a2f3d;line-height:1.35}
+.rating-value-simple{display:flex;justify-content:flex-end;align-items:center;width:115px}
+.rating-stars-simple{display:grid;grid-template-columns:auto 40px;align-items:center;column-gap:6px}
+.rating-number-badge{justify-self:end;background:#f3f3f6;padding:.15rem .45rem;border-radius:30px;font-size:.68rem;font-weight:700;color:#E21E81;white-space:nowrap}
+@media(max-width:420px){.rating-row{grid-template-columns:minmax(0,1fr) 105px;column-gap:.4rem}.rating-label-simple{font-size:.8rem}.rating-value-simple{width:105px}.rating-stars-simple{grid-template-columns:auto 36px;column-gap:4px}.rating-number-badge{font-size:.62rem;padding:.12rem .38rem}}
+.empty-rating-message{text-align:center;padding:1rem 0;color:#a1a1aa;font-size:.85rem}
+
+/* certs */
+.cert-badges{display:flex;flex-wrap:wrap;gap:.6rem}
+.cert-badge{display:none;align-items:center;gap:.5rem;padding:.5rem 1rem;border-radius:100px;font-size:.84rem;font-weight:600;border:1px solid rgba(0,0,0,.05)}
+.cert-badge.cooking-cert{background:#fff1e6;color:#b45f2b}
+.cert-badge.cleaning-cert{background:#e6f4ea;color:#2e6b3e}
+.cert-badge.nanny-cert{background:#e8f0fe;color:#1f6392}
+.cert-badge.show{display:inline-flex}
+.cert-emoji{font-size:1.1rem;line-height:1}
+
+/* CTA */
+.cta-card{background:#fff;border:1px solid #eeeef2;border-radius:24px;box-shadow:0 8px 28px rgba(20,20,40,.05);margin-top:.25rem;padding:2.2rem 1.6rem;text-align:center}
+.cta-title{font-size:1.2rem;font-weight:800;color:#111;margin-bottom:.4rem}
+.cta-subtitle{font-size:.88rem;color:#6b6f7c;line-height:1.6;margin-bottom:1.1rem}
+.cta-notice{max-width:620px;margin-left:auto;margin-right:auto;display:flex;align-items:flex-start;gap:.7rem;text-align:left;background:rgba(226,30,129,.07);border:1px solid rgba(226,30,129,.2);border-radius:1.1rem;padding:.85rem 1rem;margin-bottom:1.4rem;font-size:.85rem;line-height:1.55;color:#5a1740}
+.cta-notice i{color:#E21E81;margin-top:.15rem;flex-shrink:0}
+.cta-notice strong{color:#a8135f}
+.cta-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.cta-btn{border:none;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-width:210px;padding:.85rem 1.8rem;border-radius:100px;font-size:.98rem;font-weight:700;font-family:inherit;color:#fff;transition:opacity .2s,transform .2s}
+.cta-btn:hover{opacity:.88;transform:translateY(-2px)}
+.cta-btn-approve{background:linear-gradient(135deg,#22c55e,#16a34a);box-shadow:0 4px 14px rgba(34,197,94,.3)}
+.cta-btn-reject{background:linear-gradient(135deg,#ef4444,#dc2626);box-shadow:0 4px 14px rgba(239,68,68,.3)}
+@media(max-width:640px){.cta-buttons{flex-direction:column;align-items:stretch;width:82%;max-width:270px;margin:0 auto;gap:.7rem}.cta-btn{width:100%;min-width:0;padding:.75rem 1rem;font-size:.9rem}}
+.cta-responded{display:none}
+.cta-responded-emoji{font-size:2.5rem;margin-bottom:.6rem}
+.cta-responded-title{font-size:1.15rem;font-weight:700;margin-bottom:.4rem}
+.cta-responded-msg{font-size:.9rem;color:#6b6f7c;line-height:1.6}
+.cta-submitting{display:none;font-size:.95rem;color:#6b6f7c}
+
+/* modal */
+#confirm-overlay{display:none;position:fixed;inset:0;background:rgba(10,10,10,.75);z-index:9998;align-items:center;justify-content:center;padding:1.5rem;backdrop-filter:blur(6px)}
+#confirm-overlay.show{display:flex}
+.confirm-card{background:#fff;border-radius:1.8rem;padding:2.2rem 1.6rem;max-width:420px;width:100%;text-align:center;box-shadow:0 32px 64px rgba(0,0,0,.25)}
+.confirm-emoji{font-size:3rem;margin-bottom:.7rem}
+.confirm-title{font-size:1.2rem;font-weight:700;margin-bottom:.4rem}
+.confirm-desc{font-size:.88rem;color:#6b6f7c;line-height:1.6;margin-bottom:1.2rem}
+.confirm-reason-wrap{display:none;margin-bottom:1.2rem;text-align:left}
+.confirm-reason-label{font-size:.75rem;font-weight:600;color:#9a9eac;text-transform:uppercase;letter-spacing:.5px;display:block;margin-bottom:.4rem}
+.confirm-reason-label span{color:#ef4444}
+#reject-reason{width:100%;border:1.5px solid #e5e7eb;border-radius:.85rem;padding:.75rem 1rem;font-size:.9rem;font-family:inherit;color:#1a1e2b;resize:vertical;min-height:90px;outline:none}
+#reject-reason:focus{border-color:#E21E81}
+.confirm-reason-error{color:#ef4444;font-size:.78rem;margin-top:.35rem;display:none}
+.confirm-actions{display:flex;gap:.75rem;justify-content:center}
+.confirm-btn-cancel{background:#f0ede8;color:#6b6f7c;border:none;cursor:pointer;padding:.75rem 1.7rem;border-radius:100px;font-size:.9rem;font-weight:600;font-family:inherit}
+.confirm-btn-submit{border:none;cursor:pointer;padding:.75rem 1.7rem;border-radius:100px;font-size:.9rem;font-weight:700;font-family:inherit;color:#fff}
+
+/* ── Hover lift + press effect ── */
+.profile-card,.sec,.cta-card,.pill,.skill-chip,.glance-item,.cert-badge,.exp-strip,.stat,.rating-row,.tl-item{
+  transition:transform .22s cubic-bezier(.2,.8,.2,1),box-shadow .22s ease,border-color .22s ease,background-color .22s ease;
+  -webkit-tap-highlight-color:transparent;
+}
+.profile-card:hover,.sec:hover,.cta-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 22px 40px -14px rgba(20,20,40,.16);
+  border-color:rgba(226,30,129,.22);
+}
+.profile-card:active,.sec:active,.cta-card:active{
+  transform:translateY(-1px) scale(.992);
+  box-shadow:0 6px 16px -8px rgba(20,20,40,.14);
+}
+.pill:hover,.skill-chip:hover,.glance-item:hover,.cert-badge:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 22px -8px rgba(226,30,129,.28);
+  border-color:rgba(226,30,129,.3);
+}
+.pill:active,.skill-chip:active,.glance-item:active,.cert-badge:active{
+  transform:translateY(0) scale(.96);
+  box-shadow:0 2px 6px -2px rgba(20,20,40,.2) inset;
+}
+.exp-strip:hover{background:rgba(226,30,129,.1)}
+.exp-strip:active{transform:scale(.985)}
+.rating-row:hover{background:rgba(226,30,129,.04)}
+.cta-btn:active{transform:translateY(1px) scale(.96);opacity:1;box-shadow:0 2px 6px rgba(0,0,0,.25)}
+.confirm-btn-cancel:active,.confirm-btn-submit:active,.read-more:active{transform:scale(.95)}
+.confirm-btn-cancel,.confirm-btn-submit,.read-more{transition:transform .15s ease,opacity .2s}
+@media (hover:none){
+  .profile-card:hover,.sec:hover,.cta-card:hover,.pill:hover,.skill-chip:hover,.glance-item:hover,.cert-badge:hover{transform:none}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* ── Mobile responsive refinements ── */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{overflow-x:hidden}
+.sp-name,.sp-title,.tl-role,.tl-details,.bio-text,.cooking-value,.skill-text,.cta-subtitle,.rating-label-simple{overflow-wrap:anywhere}
+.exp-glance{grid-template-columns:repeat(auto-fit,minmax(88px,1fr))}
+#confirm-overlay{padding:max(1rem,env(safe-area-inset-top)) 1rem max(1rem,env(safe-area-inset-bottom))}
+.confirm-card{max-height:100%;overflow-y:auto;-webkit-overflow-scrolling:touch}
+#reject-reason{font-size:16px}
+@media(max-width:900px){
+  .page{max-width:680px}
+  .profile-card{padding:1.6rem 1.2rem 1.3rem}
+}
+@media(max-width:640px){
+  .page{padding:max(1rem,env(safe-area-inset-top)) max(.8rem,env(safe-area-inset-right)) max(2rem,env(safe-area-inset-bottom)) max(.8rem,env(safe-area-inset-left))}
+  .layout{gap:1rem}
+  .profile-card{border-radius:20px;padding:1.4rem 1rem 1.2rem}
+  .avatar-wrap{width:96px;height:96px}
+  .sp-name{font-size:1.25rem}
+  .stats{margin:1.1rem 0 .8rem;padding-top:1rem}
+  .stat-val{font-size:1.1rem}
+  .stat-lbl{font-size:.68rem}
+  .sec{margin-bottom:1rem}
+  .sec-head{padding-bottom:.75rem;margin-bottom:.9rem}
+  .sec-ic{width:34px;height:34px;border-radius:10px}
+  .sec-h{font-size:1rem}
+  .section-count{white-space:nowrap}
+  .bio-text{font-size:.9rem;line-height:1.65}
+  .exp-glance{gap:.5rem}
+  .glance-item{padding:.7rem .3rem}
+  .glance-value{font-size:.85rem}
+  .glance-label{font-size:.56rem}
+  .skill-chip{font-size:.78rem;padding:.4rem .8rem}
+  .cooking-menu{padding:.8rem .85rem}
+  .cooking-value{padding-left:0}
+  .cert-badge.show{font-size:.8rem;padding:.45rem .85rem}
+  .cta-card{padding:1.6rem 1rem;border-radius:20px}
+  .cta-notice{font-size:.8rem;padding:.75rem .85rem}
+  .read-more{padding:.5rem 0}
+}
+@media(max-width:480px){
+  .confirm-actions{flex-direction:column-reverse}
+  .confirm-btn-cancel,.confirm-btn-submit{width:100%;padding:.8rem 1rem}
+}
+@media(max-width:360px){
+  .pill{font-size:.76rem}
+  .stat{padding:.2rem .15rem}
+  .cta-buttons{width:100%;max-width:none}
+  .confirm-card{padding:1.6rem 1.1rem}
+}
+@media(hover:none){
+  .profile-card:active,.sec:active,.cta-card:active{transform:none}
+}
+</style>
+</head>
+<body>
+
+<div class="page" id="profile-content">
+
+  <div class="watermark-stamp-centered">
+    <img src="https://cdn.prod.website-files.com/676010d97530c2cd3340241e/69d3c48d0007d079af8acc30_Black%20and%20White%20Circle%20Professional%20Stamp%20Logo.png" alt="Verified Stamp" style="width:100%;height:auto;display:block;">
+  </div>
+
+  <div class="layout">
+  <aside class="side">
+  <div class="profile-card">
+  <!-- Header -->
+  <div class="top" id="header-card">
+    <div class="avatar-wrap">
+      <img class="photo" id="sp-photo" alt="Service provider photo" style="display:none" onload="this.style.display='block'" onerror="this.style.display='none'">
+      <span class="verified"><i class="fas fa-check"></i></span>
+    </div>
+    <div class="sp-name" id="sp-name-el"></div>
+    <div class="sp-title" id="sp-service-el"></div>
+
+    <div class="meta-pills">
+      <div class="pill" id="age-item"><span class="pill-ic"><i class="fas fa-cake-candles"></i></span><span><span id="sp-age"></span> years</span></div>
+      <div class="pill" id="lang-item"><span class="pill-ic"><i class="fas fa-language"></i></span><span id="sp-languages"></span></div>
+      <div class="pill" id="location-badge" style="display:none;"><span class="pill-ic"><i class="fas fa-location-dot"></i></span><span id="location-display"></span></div>
+    </div>
+    <div class="generated-badge" id="generated-badge"><i class="fas fa-clock"></i> Generated: <span id="generated-date-display"></span></div>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats" id="highlights-grid">
+    <div class="stat hidden" id="hl-rating">
+      <div class="stat-val"><span id="hl-rating-val"></span> <small>/ 5</small></div>
+      <div id="hl-rating-stars"></div>
+      <div class="stat-lbl">Overall rating</div>
+    </div>
+    <div class="stat hidden" id="hl-jobs">
+      <div class="stat-val" id="hl-jobs-val"></div>
+      <div class="stat-lbl">Job sessions<br>completed</div>
+    </div>
+    <div class="stat hidden" id="hl-customers">
+      <div class="stat-val" id="hl-customers-val"></div>
+      <div class="stat-lbl">Customers<br>served</div>
+    </div>
+  </div>
+  <div class="exp-strip hidden" id="hl-exp"><i class="fas fa-briefcase"></i> <span>Etalem experience:</span> <b id="hl-exp-val"></b></div>
+  </div>
+  </aside>
+
+  <main class="main">
+
+  <!-- About -->
+  <div class="sec" id="bio-card">
+    <div class="sec-head"><div class="sec-title"><span class="sec-ic"><i class="fas fa-address-card"></i></span><span class="sec-h">Skill Summary</span></div></div>
+    <div class="bio-text" id="bio-text"></div>
+    <button class="read-more" id="read-more" type="button" style="display:none">Read More</button>
+  </div>
+
+  <!-- Experience -->
+  <div class="sec" id="experience-card">
+    <div class="sec-head"><div class="sec-title"><span class="sec-ic"><i class="fas fa-briefcase"></i></span><span class="sec-h">Experience</span></div><div class="section-count" id="experience-count"></div></div>
+    <div class="exp-glance" id="exp-glance"></div>
+    <div class="sub-title hidden" id="history-title">Work history</div>
+    <div class="timeline" id="exp-timeline"></div>
+  </div>
+
+  <!-- Skills (cooking menu is merged into the Cooking group) -->
+  <div class="sec" id="skills-card">
+    <div class="sec-head"><div class="sec-title"><span class="sec-ic"><i class="fas fa-list-check"></i></span><span class="sec-h">Skills</span></div><div class="section-count" id="skills-count"></div></div>
+    <div id="skills-groups"></div>
+  </div>
+
+  <!-- Skills rating -->
+  <div class="sec" id="skill-rating-card">
+    <div class="sec-head"><div class="sec-title"><span class="sec-ic"><i class="fas fa-star"></i></span><span class="sec-h">Skills Rating</span></div></div>
+    <div id="rating-simple-container" class="rating-simple-list"></div>
+    <div id="no-ratings-message" class="empty-rating-message" style="display:none;"><i class="fas fa-chart-simple"></i> No skill ratings available</div>
+  </div>
+
+  <!-- Certifications -->
+  <div class="sec" id="certs-card">
+    <div class="sec-head"><div class="sec-title"><span class="sec-ic"><i class="fas fa-certificate"></i></span><span class="sec-h">Certifications</span></div></div>
+    <div class="cert-badges">
+      <div class="cert-badge cooking-cert" id="cert-cooking"><span class="cert-emoji">🍳</span> Cooking Certified</div>
+      <div class="cert-badge cleaning-cert" id="cert-cleaning"><span class="cert-emoji">🧹</span> Cleaning Certified</div>
+      <div class="cert-badge nanny-cert" id="cert-nanny"><span class="cert-emoji">👶</span> Nanny Certified</div>
+    </div>
+  </div>
+
+  </main>
+  </div>
+
+  <!-- Customer CTA -->
+  <div class="cta-card" id="customer-cta-card">
+    <div id="cta-pending">
+      <div class="cta-title">Let us know your decision</div>
+      <div class="cta-subtitle">
+        We have thoroughly reviewed your request and this is the Etalem SP we found that matches your needs.<br>
+        Please review the profile above and let us know your acceptance.
+      </div>
+      <div class="cta-notice">
+        <i class="fas fa-circle-info"></i>
+        <div><strong>No need to call us.</strong> Please use the <strong>Approve</strong> or <strong>Reject</strong> button below to share your decision. Your response is recorded instantly and is the fastest way for our team to act on it.</div>
+      </div>
+      <div class="cta-buttons">
+        <button class="cta-btn cta-btn-approve" onclick="handleCustomerAction('approved')">✅ Approve Profile</button>
+        <button class="cta-btn cta-btn-reject" onclick="handleCustomerAction('rejected')">❌ Reject Profile</button>
+      </div>
+    </div>
+    <div class="cta-responded" id="cta-responded">
+      <div class="cta-responded-emoji" id="responded-emoji">✅</div>
+      <div class="cta-responded-title" id="responded-title">Response Submitted</div>
+      <div class="cta-responded-msg" id="responded-message">Thank you! Your response has been recorded. Our team will be in touch shortly.</div>
+    </div>
+    <div class="cta-submitting" id="cta-submitting">
+      <i class="fas fa-circle-notch fa-spin" style="color:#E21E81;margin-right:.5rem;"></i> Submitting your response...
+    </div>
+  </div>
+
+</div>
+
+<!-- Confirmation Modal -->
+<div id="confirm-overlay">
+  <div class="confirm-card">
+    <div class="confirm-emoji" id="modal-emoji">✅</div>
+    <div class="confirm-title" id="modal-title"></div>
+    <div class="confirm-desc" id="modal-desc"></div>
+    <div class="confirm-reason-wrap" id="reason-wrapper">
+      <label class="confirm-reason-label">Reason for rejection <span>*</span></label>
+      <textarea id="reject-reason" maxlength="50" placeholder="e.g. Experience does not match our requirement..."></textarea>
+      <div style="text-align:right;font-size:.75rem;color:#9a9eac;margin-top:.25rem;"><span id="reason-counter">0</span> / 50</div>
+      <div class="confirm-reason-error" id="reason-error">Please provide a reason before submitting.</div>
+    </div>
+    <div class="confirm-actions">
+      <button class="confirm-btn-cancel" onclick="closeConfirmModal()">Cancel</button>
+      <button class="confirm-btn-submit" id="modal-confirm-btn" onclick="submitCustomerAction()">Confirm</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ CMS data (hidden). Every existing id is unchanged; d-location and d-experience-history are new. ═══ -->
+<div id="cms-data" style="display:none" aria-hidden="true">
+  <span id="d-name">Selam Tadesse</span>
+  <span id="d-photo">data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' width='300' height='380'&gt;&lt;rect width='300' height='380' fill='%23e9e6df'/&gt;&lt;circle cx='150' cy='140' r='60' fill='%23cfc9bd'/&gt;&lt;rect x='60' y='230' width='180' height='150' rx='80' fill='%23cfc9bd'/&gt;&lt;/svg&gt;</span>
+  <span id="d-service">Cooking, Cleaning &amp; Nanny</span>
+  <span id="d-age">28</span>
+  <span id="d-languages">Amharic, English</span>
+  <span id="d-location">Bole, Addis Ababa</span>
+  <span id="d-generated">2026-09-09</span>
+  <span id="d-valid-until">2026-12-31</span>
+  <span id="d-breakfast">Eggs, firfir, chechebsa, pancakes, fresh juice and tea or coffee.</span>
+  <span id="d-lunch">Injera with shiro, doro wot and tibs; pasta, rice dishes, soups and salads.</span>
+  <span id="d-work-exp">3 years with Etalem</span>
+  <span id="d-cooking-exp">5 years</span>
+  <span id="d-cleaning-exp">4 years</span>
+  <span id="d-nanny-exp">2 years</span>
+  <span id="d-experience-history">Live-in Nanny | Sunrise Kindergarten | 2023 - 2025 | Cared for children aged 2-5, prepared meals and led daily activities.
+Housekeeper | Hilton Addis Ababa | 2021 - 2023 | Room cleaning, laundry and guest area upkeep.
+Home Cook | Private household | 2019 - 2021 | Daily family meals and holiday cooking.</span>
+  <span id="d-has-cooking-cert">true</span>
+  <span id="d-has-cleaning-cert">true</span>
+  <span id="d-has-nanny-cert">true</span>
+  <span id="d-show-cooking">true</span>
+  <span id="d-show-cleaning">true</span>
+  <span id="d-show-nanny">true</span>
+  <span id="d-bio">Reliable and warm service provider with hands-on experience in home cooking, cleaning and childcare. Known for punctuality, attention to detail and a calm way with children.</span>
+  <span id="d-pa-ticket-key">PA-123</span>
+  <span id="d-jira-ticket-id">ESM-456</span>
+  <span id="d-customer-response">pending</span>
+</div>
+
+<div style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none;top:0;left:0;" aria-hidden="true">
+  <span id="d-special">Holiday feasts, birthday meals and hosting for up to 15 guests.</span>
+  <span id="d-extra-cooking">Baking, Traditional coffee ceremony, Vegetarian and fasting meals, Meal planning</span>
+  <span id="d-cooking-skills"></span>
+  <span id="d-cleaning-skills">Deep cleaning, Laundry and ironing, Window cleaning, Organizing, Kitchen sanitizing</span>
+  <span id="d-nanny-skills">Infant care, Homework help, Meal prep for children, First aid basics</span>
+  <span id="d-is-expired"></span>
+  <span id="d-job-sessions-completed">120</span>
+  <span id="d-customers-served">34</span>
+  <span id="d-rating-punctuality">4.5</span>
+  <span id="d-rating-professionalism">5</span>
+  <span id="d-rating-attention">4.5</span>
+  <span id="d-rating-quality-cleaning">4</span>
+  <span id="d-rating-care-furniture">4.5</span>
+  <span id="d-rating-flavor">5</span>
+  <span id="d-rating-variety">4</span>
+  <span id="d-rating-hygienic-prep">4.5</span>
+  <span id="d-rating-child-needs">5</span>
+  <span id="d-rating-child-food">4.5</span>
+  <span id="d-rating-hygiene-cleanliness">5</span>
+</div>
+
+<script>
+(function() {
+  /* ───────── helpers ───────── */
+  function g(id) { var e = document.getElementById(id); return e ? e.textContent.trim() : ''; }
+  function set(id, val) { var el = document.getElementById(id); if (el) el.textContent = val; }
+  function hideEl(id) { var el = document.getElementById(id); if (el) el.classList.add('hidden'); }
+  function showEl(id) { var el = document.getElementById(id); if (el) el.classList.remove('hidden'); }
+  function isEmpty(val) { return !val || String(val).trim() === ''; }
+  function parseNum(val) { if (isEmpty(val)) return null; var n = Number(val); return isNaN(n) ? null : n; }
+  function el(tag, cls, text) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text !== undefined && text !== null) e.textContent = text;
+    return e;
+  }
+  function icon(cls) { var i = document.createElement('i'); i.className = cls; return i; }
+  // Writes text into an element and colours every "Etalem" in #E21E81
+  function setBrandText(id, text) {
+    var host = document.getElementById(id);
+    if (!host) return;
+    host.textContent = '';
+    String(text).split(/(etalem)/i).forEach(function(part) {
+      if (!part) return;
+      if (part.toLowerCase() === 'etalem') host.appendChild(el('span', 'brand-word', part));
+      else host.appendChild(document.createTextNode(part));
+    });
+  }
+
+  function formatDate(isoString) {
+    if (!isoString) return '';
+    try {
+      var date = new Date(isoString);
+      if (isNaN(date.getTime())) return isoString;
+      var day = String(date.getDate()).padStart(2, '0');
+      var month = String(date.getMonth() + 1).padStart(2, '0');
+      return day + '/' + month + '/' + date.getFullYear();
+    } catch (e) { return isoString; }
+  }
+
+  /* ───────── stars: grey base + colour fill clipped to the exact value ───────── */
+  var STAR_PATH = 'M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z';
+  function oneStar() { return '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="' + STAR_PATH + '"/></svg>'; }
+  function starsHtml(value, size) {
+    var v = Math.max(0, Math.min(5, value));
+    var pct = (v / 5) * 100;
+    var five = oneStar() + oneStar() + oneStar() + oneStar() + oneStar();
+    return '<span class="stars" style="--star-size:' + size + 'px" role="img" aria-label="' + v + ' out of 5">' +
+      '<span class="stars-layer stars-bg">' + five + '</span>' +
+      '<span class="stars-fill" style="width:' + pct + '%"><span class="stars-layer">' + five + '</span></span>' +
+    '</span>';
+  }
+  function fmt1(n) { return (Math.round(n * 10) / 10).toFixed(1); }
+
+  /* ───────── read all CMS values ───────── */
+  var showCooking  = g('d-show-cooking');
+  var showCleaning = g('d-show-cleaning');
+  var showNanny    = g('d-show-nanny');
+
+  var name = g('d-name'), service = g('d-service'), age = g('d-age'), languages = g('d-languages');
+  var location = g('d-location');
+  var photo = g('d-photo'), bio = g('d-bio'), breakfast = g('d-breakfast'), lunch = g('d-lunch');
+  var special = g('d-special'), extraCooking = g('d-extra-cooking');
+  var workExp = g('d-work-exp'), cookingExp = g('d-cooking-exp'), cleaningExp = g('d-cleaning-exp');
+  var nannyExp = g('d-nanny-exp'), cookingSkills = g('d-cooking-skills'), cleaningSkills = g('d-cleaning-skills');
+  var nannySkills = g('d-nanny-skills'), jobSessions = g('d-job-sessions-completed'), customers = g('d-customers-served');
+  var hasCookingCert = g('d-has-cooking-cert'), hasCleaningCert = g('d-has-cleaning-cert'), hasNannyCert = g('d-has-nanny-cert');
+  var generatedDateRaw = g('d-generated');
+  var historyRaw = (document.getElementById('d-experience-history') || {}).textContent || '';
+
+  /* ───────── header ───────── */
+  set('sp-name-el', name); set('sp-service-el', service);
+  if (!isEmpty(age)) set('sp-age', age); else hideEl('age-item');
+  if (!isEmpty(photo)) { var ph = document.getElementById('sp-photo'); if (ph) ph.src = photo; }
+  if (!isEmpty(bio)) set('bio-text', bio); else hideEl('bio-card');
+
+  set('sp-languages', !isEmpty(languages) ? languages : 'Amharic');
+
+  if (!isEmpty(location)) {
+    set('location-display', location);
+    document.getElementById('location-badge').style.display = 'inline-flex';
+  }
+  if (!isEmpty(generatedDateRaw)) {
+    set('generated-date-display', formatDate(generatedDateRaw));
+    document.getElementById('generated-badge').style.display = 'inline-flex';
+  } else {
+    document.getElementById('generated-badge').style.display = 'none';
+  }
+
+  /* ───────── ratings (original list layout, golden stars) ───────── */
+  var ratingDefinitions = [
+    { label: 'Punctuality & Time Management',                  key: 'd-rating-punctuality' },
+    { label: 'Professionalism & Politeness',                   key: 'd-rating-professionalism' },
+    { label: 'Attention to Detail and Following Instructions', key: 'd-rating-attention' }
+  ];
+  if (showCleaning === 'true') {
+    ratingDefinitions.push({ label: 'Quality of Cleaning',                   key: 'd-rating-quality-cleaning' });
+    ratingDefinitions.push({ label: 'Handling Furniture and Items with Care', key: 'd-rating-care-furniture' });
+  }
+  if (showCooking === 'true') {
+    ratingDefinitions.push({ label: 'Flavor / Taste of Food',    key: 'd-rating-flavor' });
+    ratingDefinitions.push({ label: 'Variety & Portion of Food', key: 'd-rating-variety' });
+    ratingDefinitions.push({ label: 'Hygienic Preparation',      key: 'd-rating-hygienic-prep' });
+  }
+  if (showNanny === 'true') {
+    ratingDefinitions.push({ label: "Handling Child's Emotional and Physical Needs", key: 'd-rating-child-needs' });
+    ratingDefinitions.push({ label: 'Quality of Food Preparation for a Child',       key: 'd-rating-child-food' });
+    ratingDefinitions.push({ label: 'Hygiene and Cleanliness of Nanny',              key: 'd-rating-hygiene-cleanliness' });
+  }
+
+  function createRatingRow(label, num) {
+    var shown = Math.round(Math.min(5, num) * 2) / 2;   // stars show in half steps, like the original
+    var row = document.createElement('div');
+    row.className = 'rating-row show';
+    row.innerHTML =
+      '<div class="rating-info"><span class="rating-bullet">\u2014</span><span class="rating-label-simple"></span></div>' +
+      '<div class="rating-value-simple"><div class="rating-stars-simple">' + starsHtml(shown, 12) +
+      '<span class="rating-number-badge">' + num + '/5</span></div></div>';
+    row.querySelector('.rating-label-simple').textContent = label;
+    return row;
+  }
+
+  var ratingContainer = document.getElementById('rating-simple-container');
+  var ratingCard = document.getElementById('skill-rating-card');
+  var emptyMsg = document.getElementById('no-ratings-message');
+  var allRatings = [];
+  if (ratingContainer) {
+    ratingContainer.innerHTML = '';
+    ratingDefinitions.forEach(function(def) {
+      var n = parseNum(g(def.key));
+      if (n === null || n <= 0) return;
+      allRatings.push(Math.min(5, n));
+      ratingContainer.appendChild(createRatingRow(def.label, n));
+    });
+    if (!allRatings.length) {
+      if (emptyMsg) emptyMsg.style.display = 'block';
+      if (ratingCard) ratingCard.classList.add('hidden');
+    } else {
+      if (emptyMsg) emptyMsg.style.display = 'none';
+      if (ratingCard) ratingCard.classList.remove('hidden');
+    }
+  }
+  // average of the shown ratings, used only by the "Overall rating" highlight tile
+  var overallAvg = allRatings.length
+    ? allRatings.reduce(function(a, b) { return a + b; }, 0) / allRatings.length
+    : null;
+
+  /* ───────── highlights strip ───────── */
+  var sessionsNum = parseNum(jobSessions), custNum = parseNum(customers);
+  var anyHighlight = false;
+  if (overallAvg !== null) {
+    set('hl-rating-val', fmt1(overallAvg));
+    document.getElementById('hl-rating-stars').innerHTML = starsHtml(overallAvg, 16);
+    showEl('hl-rating'); anyHighlight = true;
+  }
+  if (sessionsNum !== null && sessionsNum > 0) { set('hl-jobs-val', sessionsNum); showEl('hl-jobs'); anyHighlight = true; }
+  if (custNum !== null && custNum > 0) { set('hl-customers-val', custNum); showEl('hl-customers'); anyHighlight = true; }
+  if (!isEmpty(workExp)) { setBrandText('hl-exp-val', workExp); showEl('hl-exp'); anyHighlight = true; }
+  if (!anyHighlight) hideEl('highlights-grid');
+
+  /* ───────── experience: at-a-glance + work history ───────── */
+  var glance = document.getElementById('exp-glance');
+  var glanceCount = 0;
+  function addGlance(emoji, label, value) {
+    if (isEmpty(value)) return;
+    var item = el('div', 'glance-item');
+    var ic = el('div', 'glance-icon', emoji);
+    var txt = el('div');
+    txt.appendChild(el('div', 'glance-label', label));
+    txt.appendChild(el('div', 'glance-value', value));
+    item.appendChild(ic); item.appendChild(txt);
+    glance.appendChild(item);
+    glanceCount++;
+  }
+  if (showCooking === 'true')  addGlance('\uD83C\uDF73', 'Cooking experience', cookingExp);
+  if (showCleaning === 'true') addGlance('\uD83E\uDDF9', 'Cleaning experience', cleaningExp);
+  if (showNanny === 'true')    addGlance('\uD83D\uDC76', 'Nanny experience', nannyExp);
+
+  /* History format (one entry per line):  Role | Institution | Period | Details
+     Also accepts a JSON array of {role, institution, period, details}. Institution is optional. */
+  function parseHistory(raw) {
+    var t = (raw || '').trim();
+    if (!t) return [];
+    var items = [];
+    if (t.charAt(0) === '[') {
+      try {
+        var arr = JSON.parse(t);
+        if (Array.isArray(arr)) {
+          items = arr.map(function(o) {
+            if (typeof o === 'string') return { role: o };
+            return {
+              role: o.role || o.title || o.position || '',
+              institution: o.institution || o.company || o.employer || o.organization || '',
+              period: o.period || o.duration || o.dates || '',
+              details: o.details || o.description || ''
+            };
+          });
+        }
+      } catch (e) { items = []; }
+    }
+    if (!items.length) {
+      items = t.split(/\r?\n|\s*\|\|\s*/).map(function(line) {
+        return line.replace(/^[\s\-•*]+/, '').trim();
+      }).filter(Boolean).map(function(line) {
+        var p = line.split('|').map(function(s) { return s.trim(); });
+        return { role: p[0] || '', institution: p[1] || '', period: p[2] || '', details: p.slice(3).join(' | ') };
+      });
+    }
+    return items.filter(function(it) { return it.role || it.institution || it.details; });
+  }
+
+  var history = parseHistory(historyRaw);
+  var timeline = document.getElementById('exp-timeline');
+  history.forEach(function(it) {
+    var item = el('div', 'tl-item');
+    item.appendChild(el('div', 'tl-role', it.role || it.institution));
+    var metaItems = [];
+    if (it.role && it.institution) metaItems.push({ cls: 'tl-inst', ic: 'fas fa-building', text: it.institution });
+    if (it.period) metaItems.push({ cls: 'tl-period', ic: 'fas fa-calendar-alt', text: it.period });
+    if (metaItems.length) {
+      var meta = el('div', 'tl-meta');
+      metaItems.forEach(function(m) {
+        var chip = el('span', 'tl-chip ' + m.cls);
+        chip.appendChild(icon(m.ic));
+        chip.appendChild(el('span', null, m.text));
+        meta.appendChild(chip);
+      });
+      item.appendChild(meta);
+    }
+    if (it.details) item.appendChild(el('div', 'tl-details', it.details));
+    timeline.appendChild(item);
+  });
+  if (history.length) {
+    showEl('history-title');
+    set('experience-count', history.length + (history.length === 1 ? ' role' : ' roles'));
+  }
+  if (!history.length && glanceCount === 0) hideEl('experience-card');
+
+  /* ───────── skills as chips (cooking menu merged into the Cooking group) ───────── */
+  function splitItems(str) {
+    var seen = {}, out = [];
+    String(str || '').split(/\r?\n|[;,•·|]+/).forEach(function(s) {
+      s = s.trim().replace(/^[-–—*]+\s*/, '');
+      if (!s) return;
+      var k = s.toLowerCase();
+      if (seen[k]) return;
+      seen[k] = true; out.push(s);
+    });
+    return out;
+  }
+  var SKILL_ICONS = {
+    cooking:  '<svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21a1 1 0 0 0 1-1v-5.35c0-.457.316-.844.727-1.041a4 4 0 0 0-2.134-7.589 5 5 0 0 0-9.186 0 4 4 0 0 0-2.134 7.588c.411.198.727.585.727 1.041V20a1 1 0 0 0 1 1Z"/><path d="M6 17h12"/></svg>',
+    cleaning: '<svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3h.01"/><path d="M7 5h.01"/><path d="M11 7h.01"/><path d="M3 7h.01"/><path d="M7 9h.01"/><path d="M3 11h.01"/><rect width="4" height="4" x="15" y="5"/><path d="m19 9 2 2v10c0 .6-.4 1-1 1h-6c-.6 0-1-.4-1-1V11l2-2"/><path d="m13 14 8-2"/><path d="m13 19 8-2"/></svg>',
+    nanny:    '<svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 12h.01"/><path d="M15 12h.01"/><path d="M10 16c.5.3 1.2.5 2 .5s1.5-.2 2-.5"/><path d="M19 6.3a9 9 0 0 1 1.8 3.9 2 2 0 0 1 0 3.6 9 9 0 0 1-17.6 0 2 2 0 0 1 0-3.6A9 9 0 0 1 12 3c2 0 3.5 1.1 3.5 2.5s-.9 2.5-2 2.5c-.8 0-1.5-.4-1.5-1"/></svg>'
+  };
+  var skillsGroups = document.getElementById('skills-groups');
+  var totalSkills = 0;
+
+  function buildCookingMenu() {
+    var rows = [
+      ['fas fa-mug-hot', 'Breakfast', breakfast],
+      ['fas fa-plate-wheat', 'Lunch & Dinner', lunch],
+      ['fas fa-champagne-glasses', 'Special Events', special]
+    ].filter(function(r) { return !isEmpty(r[2]); });
+    if (!rows.length) return null;
+    var box = el('div', 'cooking-menu');
+    rows.forEach(function(r) {
+      var item = el('div', 'cooking-item');
+      var label = el('div', 'cooking-label');
+      label.appendChild(icon(r[0]));
+      label.appendChild(document.createTextNode(' ' + r[1]));
+      item.appendChild(label);
+      item.appendChild(el('div', 'cooking-value', r[2]));
+      box.appendChild(item);
+    });
+    return box;
+  }
+
+  function addSkillGroup(title, emoji, raw, extra) {
+    var items = splitItems(raw);
+    if (!items.length && !extra) return;
+    var grp = el('div', 'skill-group');
+    var head = el('div', 'skill-group-title');
+    var sg = el('span', 'skill-group-svg'); sg.innerHTML = SKILL_ICONS[emoji] || ''; head.appendChild(sg);
+    head.appendChild(el('span', null, title));
+    grp.appendChild(head);
+    if (items.length === 1 && items[0].length > 70) {
+      grp.appendChild(el('div', 'skill-text', items[0]));
+    } else if (items.length) {
+      var chips = el('div', 'chips');
+      items.forEach(function(s) {
+        var chip = el('span', 'skill-chip');
+        chip.appendChild(icon('fas fa-check'));
+        chip.appendChild(el('span', null, s));
+        chips.appendChild(chip);
+      });
+      grp.appendChild(chips);
+      totalSkills += items.length;
+    }
+    if (extra) grp.appendChild(extra);
+    skillsGroups.appendChild(grp);
+  }
+  if (showCooking === 'true')  addSkillGroup('Cooking', 'cooking', !isEmpty(extraCooking) ? extraCooking : cookingSkills, buildCookingMenu());
+  if (showCleaning === 'true') addSkillGroup('Cleaning', 'cleaning', cleaningSkills);
+  if (showNanny === 'true')    addSkillGroup('Nanny', 'nanny', nannySkills);
+  if (!skillsGroups.children.length) hideEl('skills-card');
+  else if (totalSkills) set('skills-count', totalSkills + (totalSkills === 1 ? ' skill' : ' skills'));
+
+  /* ───────── certifications ───────── */
+  var anyCert = false;
+  if (hasCookingCert === 'true')  { document.getElementById('cert-cooking').classList.add('show'); anyCert = true; }
+  if (hasCleaningCert === 'true') { document.getElementById('cert-cleaning').classList.add('show'); anyCert = true; }
+  if (hasNannyCert === 'true')    { document.getElementById('cert-nanny').classList.add('show'); anyCert = true; }
+  if (!anyCert) hideEl('certs-card');
+
+  /* ───────── Customer CTA logic (unchanged) ───────── */
+  var N8N_WEBHOOK_URL = 'https://goodayon.app.n8n.cloud/webhook/customer-profile-action';
+
+  var paTicketKey      = g('d-pa-ticket-key');
+  var esmTicketId      = g('d-jira-ticket-id');
+  var customerResponse = g('d-customer-response');
+  var pendingAction    = '';
+
+  if (customerResponse && customerResponse !== 'pending' && customerResponse !== '') {
+    showAlreadyResponded(customerResponse);
+  }
+
+  window.handleCustomerAction = function(action) {
+    pendingAction = action;
+
+    var emoji      = document.getElementById('modal-emoji');
+    var title      = document.getElementById('modal-title');
+    var desc       = document.getElementById('modal-desc');
+    var confirmBtn = document.getElementById('modal-confirm-btn');
+    var reasonWrap = document.getElementById('reason-wrapper');
+    var reasonErr  = document.getElementById('reason-error');
+    var textarea   = document.getElementById('reject-reason');
+
+    if (action === 'approved') {
+      emoji.textContent              = '✅';
+      title.textContent              = 'Approve this profile?';
+      desc.textContent               = 'You are about to approve this Service Provider. Our team will reach out to confirm your booking shortly.';
+      confirmBtn.style.background    = 'linear-gradient(135deg, #22c55e 0%, #16a34a 100%)';
+      confirmBtn.textContent         = 'Yes, Approve';
+      reasonWrap.style.display       = 'none';
+    } else {
+      emoji.textContent              = '❌';
+      title.textContent              = 'Reject this profile?';
+      desc.textContent               = 'We found this Etalem SP after carefully reviewing your request. Please provide a valid reason for rejection. Note that rejecting may cause a delay in your service start date.';
+      confirmBtn.style.background    = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+      confirmBtn.textContent         = 'Yes, Reject';
+      reasonWrap.style.display       = 'block';
+    }
+
+    if (textarea) textarea.value = '';
+    if (reasonErr) reasonErr.style.display = 'none';
+    document.getElementById('reason-counter').textContent = '0';
+    if (textarea) textarea.addEventListener('input', function() {
+      document.getElementById('reason-counter').textContent = this.value.length;
+    });
+
+    document.getElementById('confirm-overlay').classList.add('show');
+  };
+
+  window.closeConfirmModal = function() {
+    document.getElementById('confirm-overlay').classList.remove('show');
+    pendingAction = '';
+  };
+
+  window.submitCustomerAction = function() {
+    var reason = '';
+
+    if (pendingAction === 'rejected') {
+      var ta = document.getElementById('reject-reason');
+      reason = ((ta && ta.value) || '').trim();
+      if (!reason) {
+        document.getElementById('reason-error').style.display = 'block';
+        return;
+      }
+    }
+
+    document.getElementById('confirm-overlay').classList.remove('show');
+    showState('submitting');
+
+    fetch(N8N_WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        paTicketKey: paTicketKey,
+        esmTicketId: esmTicketId,
+        action:      pendingAction,
+        reason:      reason
+      })
+    })
+    .then(function(res) {
+      if (res.status === 409) { showAlreadyResponded(pendingAction); return; }
+      if (!res.ok) throw new Error('Server error: ' + res.status);
+      showAlreadyResponded(pendingAction);
+    })
+    .catch(function(err) {
+      console.error('Submission error:', err);
+      showState('pending');
+      alert('Something went wrong. Please try again or contact us directly.');
+    });
+  };
+
+  function showState(state) {
+    document.getElementById('cta-pending').style.display    = state === 'pending'    ? 'block' : 'none';
+    document.getElementById('cta-responded').style.display  = state === 'responded'  ? 'block' : 'none';
+    document.getElementById('cta-submitting').style.display = state === 'submitting' ? 'block' : 'none';
+  }
+
+  function showAlreadyResponded(action) {
+    var emoji   = document.getElementById('responded-emoji');
+    var title   = document.getElementById('responded-title');
+    var message = document.getElementById('responded-message');
+
+    if (action === 'approved') {
+      emoji.textContent   = '✅';
+      title.textContent   = 'Profile Approved';
+      message.textContent = 'Thank you! You have approved this Service Provider. Our team will contact you shortly to confirm your booking.';
+    } else if (action === 'rejected') {
+      emoji.textContent   = '❌';
+      title.textContent   = 'Profile Rejected';
+      message.textContent = 'Thank you for your response. We will find a better match for you and be in touch soon.';
+    } else {
+      emoji.textContent   = '🔒';
+      title.textContent   = 'Response Already Submitted';
+      message.textContent = 'Your response has already been recorded. Our team will be in touch shortly.';
+    }
+
+    showState('responded');
+  }
+
+  document.getElementById('confirm-overlay').addEventListener('click', function(e) {
+    if (e.target === this) closeConfirmModal();
+  });
+
+})();
+</script>
+<script>
+(function(){
+  var t=document.getElementById('bio-text'), b=document.getElementById('read-more');
+  if(!t||!b) return;
+  function check(){ if(!t.classList.contains('open') && t.scrollHeight>t.clientHeight+2) b.style.display='inline-block'; }
+  b.addEventListener('click',function(){ var open=t.classList.toggle('open'); b.textContent=open?'Show Less':'Read More'; });
+  check(); window.addEventListener('load',check);
+})();
+</script>
+</body>
+</html>
